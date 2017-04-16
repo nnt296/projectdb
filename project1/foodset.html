@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://getbootstrap.com/examples/jumbotron/ -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="icon" href="icon.jpg">
+
+    <title>Doge</title>
+
+    <link rel="stylesheet" type="text/css" href="./bootstrap/css/bootstrap.min.css">
+    <link href="./template_files/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="./template_files/jumbotron.css" rel="stylesheet">
+    <script src="./template_files/ie-emulation-modes-warning.js"></script>
+
+    <style>
+        img{
+            max-height: 100%;
+            max-width: 100%;
+        }
+        #cart-head{
+            width: 100%;
+            background-color: #2aabd2;
+            height: 40px;
+            border-radius: 8px;
+            color: white;
+        }
+        #cart{
+            width: 100%;
+        }
+        td {
+            padding: 10px;
+            width: 25%;
+        }
+        td button {
+            color: #0f0f0f;
+            border-radius: 5px;
+            float: right;
+            background-color: white;
+            border: none;
+
+        }
+        td button:hover{
+            color: red;
+        }
+    </style>
+</head>
+
+<body onload="showFood('all')">
+    <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">DOGE</a>
+                <!-- <a class="navbar-brand" href="index.php"><img src="doge.jpg"></a> -->
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.php">Home Page</a></li>
+                    <li class="active"><a href="#">Food Set</a></li>
+                    <li><a href="login.php">Login</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+        </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="background: url('fruit.jpg') no-repeat center;">
+        <div class="container">
+            <h1 style="width: 50%">Welcome to DOGE</h1>
+            <p style="width: 50%">Where you can order the most delicious FOOD, DESSERT, and DRINK.</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <form>
+                    <strong class="text-uppercase"><p>Select food base on Category </p></strong>
+                    <select name="food" onchange="showFood(this.value)">
+                        <option value="">Select category</option>
+                        <option value="all">All</option>
+                        <option value="bún">Bún</option>
+                        <option value="bánh đa">Bánh Đa</option>
+                        <option value="miến">Miến</option>
+                        <option value="cơm">Cơm</option>
+                        <option value="phở">Phở</option>
+                    </select>
+                </form>
+            </div>
+            <div class="col-sm-6">
+                <strong class="text-uppercase"><p>Select food base on Name </p></strong>
+                <input type="text" size="30" onkeyup="showFood(this.value)">
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12" id="order">
+                <table id="cart-head">
+                    <tr>
+                        <td>Food Name</td>
+                        <td>Food ID</td>
+                        <td>Quantity</td>
+                        <td><button type="submit" onclick="clearBox('cart')">Remove all</button></td>
+                    </tr>
+                </table>
+                <table id="cart"></table>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container">
+        <div class="row" id="display">
+            <!--Contents got from server will be put here-->
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./template_files/jquery-3.2.1.min.js"></script>
+    <script src="myScript.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./template_files/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./template_files/ie10-viewport-bug-workaround.js"></script>
+
+
+</body>
+</html>
