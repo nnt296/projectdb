@@ -78,7 +78,7 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="index.php">Home Page</a></li>
-            <li><a href="#">Food Set</a></li>
+            <li><a href="foodset.html">Food Set</a></li>
             <li class="dropdown active">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span id="usermail"></span> <span class="caret"></span></a> 
               <ul class="dropdown-menu">

@@ -12,45 +12,73 @@ function startIfUser (str){
             '<li><a href="logout.php">Logout</a></li> ' +
             '</ul>'+
             '</li>';
-        // var html ='<a href="">This text</a>';
-        // console.log(element.html());
         element.replaceWith(html);
     });
 }
-// function isEmpty( el ){
-//     return !$.trim(el.html());
-// }
+$('body').on('load',checkUser());
+// $('body').on('load',checkUser(),showFood('all'));
 
+function fetchFood(response, idHTML) {
+    var myObj = JSON.parse(response);
+    var text = "";
+    for (i = 0; i < myObj.length; i++) {
+        text += insertDisplay(myObj[i]['Image'],
+            myObj[i]['Foodname'],
+            myObj[i]['Description'],
+            myObj[i]['FoodID']
+        );
+    }
+    document.getElementById(idHTML).innerHTML = text;
+}
+function checkUser() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState ===4 && this.status === 200){
+            var myObj = JSON.parse(this.responseText);
+            if (myObj[0]['id'] !== 0){
+                startIfUser(myObj[0]['id']);
+            }
+        }
+    };
+    xmlhttp.open("GET","checkLogin.php",true);
+    xmlhttp.send();
+}
+
+function showPlace(str) {
+    if (str === ""){
+        document.getElementById("suggest_panel").innerHTML = "";
+    }
+    else {
+        var place = "place=" + str;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200){
+                // fetchPlace(this.responseText);
+
+                var myObj = JSON.parse(this.responseText);
+                var text = "";
+                for (i=0; i<myObj.length; i++){
+                    $('#suggest_panel').append('<p><input onclick="" size="30" value="' + myObj[i]['StoreName'] +'"></p>')
+                }
+            }
+        };
+        xmlhttp.open("GET", "serverFood.php?" + place,true);
+        xmlhttp.send();
+    }
+}
 function showFood(str) {
     if (str === "") {
         document.getElementById("display").innerHTML = "";
     }
     else {
+        var food = "cat=" + str;
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
-                var myObj = JSON.parse(this.responseText);
-                var text = "";
-                var length = myObj.length-1;
-
-                if (!('id' in myObj[length])){
-                    // console.log('no');
-                    length ++;
-                }
-                else {
-                    // console.log('yes');
-                    startIfUser(myObj[length]['id']);
-                }
-                for (i = 0; i < length; i++) {
-                    text += insertDisplay(myObj[i]['Image'],
-                        myObj[i]['Foodname'],
-                        myObj[i]['Description'],
-                        myObj[i]['FoodID']);
-                }
-                document.getElementById("display").innerHTML = text;
+                fetchFood(this.responseText,"display");
             }
         };
-        xmlhttp.open("GET", "serverFood.php?cat=" + str, true);
+        xmlhttp.open("GET", "serverFood.php?" + food, true);
         xmlhttp.send();
     }
 }
