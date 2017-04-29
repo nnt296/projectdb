@@ -1,8 +1,8 @@
 /**
  * Created by ThanhNN on 31/03/2017.
  */
-function startIfUser (str){
-    $( document ).ready(function () {
+function startIfUser(str) {
+    $(document).ready(function () {
         var element = $('li').has('a[href="login.php"]');
         var html = '<li class="dropdown">' +
             '<a href="#" class="dropdown-toggle" data-toggle="dropdown" ' +
@@ -10,16 +10,20 @@ function startIfUser (str){
             '<ul class="dropdown-menu">' +
             '<li><a href="user.php?acc=buyer">View profile</a></li>' +
             '<li><a href="logout.php">Logout</a></li> ' +
-            '</ul>'+
+            '</ul>' +
             '</li>';
         element.replaceWith(html);
     });
 }
-$('body').on('load',checkUser());
+$('body').on('load', checkUser());
 // $('body').on('load',checkUser(),showFood('all'));
 
 function fetchFood(response, idHTML) {
     var myObj = JSON.parse(response);
+    if (!myObj.length){
+        console.log('empty');
+        return
+    }
     var text = "";
     for (i = 0; i < myObj.length; i++) {
         text += insertDisplay(myObj[i]['Image'],
@@ -33,38 +37,79 @@ function fetchFood(response, idHTML) {
 function checkUser() {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
-        if (this.readyState ===4 && this.status === 200){
+        if (this.readyState === 4 && this.status === 200) {
             var myObj = JSON.parse(this.responseText);
-            if (myObj[0]['id'] !== 0){
+            if (myObj[0]['id'] !== 0) {
                 startIfUser(myObj[0]['id']);
             }
         }
     };
-    xmlhttp.open("GET","checkLogin.php",true);
+    xmlhttp.open("GET", "checkLogin.php", true);
     xmlhttp.send();
 }
 
 function showPlace(str) {
-    if (str === ""){
+    if (str === "") {
         document.getElementById("suggest_panel").innerHTML = "";
     }
     else {
         var place = "place=" + str;
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200){
+            if (this.readyState === 4 && this.status === 200) {
                 // fetchPlace(this.responseText);
 
                 var myObj = JSON.parse(this.responseText);
-                var text = "";
-                for (i=0; i<myObj.length; i++){
-                    $('#suggest_panel').append('<p><input onclick="" size="30" value="' + myObj[i]['StoreName'] +'"></p>')
+                var suggest_panel = $('#suggest_panel');
+                suggest_panel.text('');
+                for (i = 0; i < myObj.length; i++) {
+                    var text = '<p onmouseup="displayPlace(\'' +
+                        myObj[i]['Image'] + '\',\'' +
+                        myObj[i]['StoreName'] + '\', \'' +
+                        myObj[i]['Address'] + '\',\'' +
+                        myObj[i]['StoreID'] + '\')">' +
+                        myObj[i]['StoreID'] + '</p>';
+                    suggest_panel.append(text);
                 }
+
             }
         };
-        xmlhttp.open("GET", "serverFood.php?" + place,true);
+        xmlhttp.open("GET", "serverFood.php?" + place, true);
         xmlhttp.send();
     }
+}
+function foodAssoWithPlace(storeID) {
+    if (storeID === "") {
+        document.getElementById('delivery').innerHTML = "";
+    }
+    else {
+        var fplace = "fplace=" + storeID;
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                fetchFood(this.responseText, "delivery");
+            }
+        };
+        xmlhttp.open("GET", "serverFood.php?" + fplace, true);
+        xmlhttp.send();
+    }
+}
+function displayPlace(Image, StoreName, Address, StoreID) {
+    $('#display').text('');
+    //to empty display
+
+    Image = "pizza.jpg";
+    var text = '<div >' +
+        '<img src="' + Image + '" style="width: 100%; height: 400px;"></div> ' +
+        '<br> ' +
+        '<div id="about"> ' +
+        '<p>' + StoreName + '</p> ' +
+        '<p class="glyphicon glyphicon-map-marker"> ' + Address + '</p> ' +
+        '</div> <br><br>' +
+        '<div><p>Order HERE!</p></div> <hr>' +
+        '<div id="delivery">' + StoreID + '</div>';
+    $('#display').html(text);
+    foodAssoWithPlace(StoreID);
 }
 function showFood(str) {
     if (str === "") {
@@ -75,7 +120,7 @@ function showFood(str) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
-                fetchFood(this.responseText,"display");
+                fetchFood(this.responseText, "display");
             }
         };
         xmlhttp.open("GET", "serverFood.php?" + food, true);
@@ -91,6 +136,7 @@ function clearBox2(elementID) {
     $("#" + elementID).remove();
 }
 function insertDisplay(img, name, description, id) {
+    img = 'wow.jpg';
     var text = '<div class="col-sm-4" >';
     text += '<div class="thumbnail" style="height: 450px;">';
     text += '<img src="' + img + '">';
@@ -106,10 +152,10 @@ function insertDisplay(img, name, description, id) {
     return text;
 }
 function addCart(name, id) {
-    if($("tr#" + id).length !== 0) {
+    if ($("tr#" + id).length !== 0) {
         //does exist tr with id == id
-        var element = $('td[name="'+ id +'"');
-        // alert(element.text());
+        var element = $('td[name="' + id + '"');
+        // alter(element.text());
         var quantity = element.text();
         quantity++;
         element.text(quantity);
@@ -117,7 +163,7 @@ function addCart(name, id) {
     else {
         var text = "<td>" + name + "</td>";
         text += "<td>" + id + "</td>";
-        text += "<td name='"+ id +"'>1</td>";
+        text += "<td name='" + id + "'>1</td>";
         text += '<td><button type="submit" onclick="clearBox2(\'' + id + '\')">Unselect item</button></td>';
 
         var tr = document.createElement('tr');
@@ -131,7 +177,7 @@ function getFood(foodid) {
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-            if (this.responseText.includes('login')){
+            if (this.responseText.includes('login')) {
                 $('#order').empty();
                 $('#order').append(this.responseText);
             }

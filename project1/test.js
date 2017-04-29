@@ -9,3 +9,4 @@ var x = new MutationObserver(function (e) {
 });
 
 x.observe(document.getElementById('cart'), { childList: true });
+
