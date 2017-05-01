@@ -218,3 +218,20 @@ function getFood(foodid, price) {
     xmlhttp.open("GET", "addCart.php?state=add&code=" + foodid, true);
     xmlhttp.send();
 }
+
+function payment() {
+    var dict = [];
+    var table = $('#cart');
+    var total = 0;
+    table.find('tr').each(function () {
+        var td = $(this).find('td');
+        var id = td.eq(1).text();
+        var quantity = td.eq(2).text();
+        var element = {};
+        element[id] = quantity;
+        dict.push(element);
+    });
+    $.post("addCart.php", {submit: JSON.stringify(dict)}, function (result) {
+       $('#temp').text(result);
+    });
+}

@@ -1,32 +1,31 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ThanhNN
- * Date: 11/04/2017
- * Time: 2:07 CH
- */
+// Handling data in JSON format on the server-side using PHP
+//
+//header("Content-Type: application/json");
+//// build a PHP variable from JSON sent using POST method
+//$v = json_decode(stripslashes(file_get_contents("php://input")));
+//// build a PHP variable from JSON sent using GET method
+//$v = json_decode(stripslashes($_GET["data"]));
+//// encode the PHP variable to JSON and send it back on client-side
+//echo json_encode($v);
 
-if (isset($_GET['cat']) and  $_GET['cat'] == 'all'){
-    require_once ('connectdb.php');
-    $query = 'SELECT Foodname,Description,Image,FoodID FROM food';
-    mysqli_select_db($conn, 'user');
-    $result = mysqli_query($conn,$query);
-    $count = mysqli_num_rows($result);
+require_once('connectdb.php');
+mysqli_select_db($conn, 'user');
+$date = date('Y-m-d H:i:s');
+$key = "NO004";
+$value = "1";
 
-    if ($count > 0){
-        $json = [];
-        while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
-            array_push($json,$row);
-        }
-//        foreach ($json as $item){
-//            echo $item['Foodname'] . $item['Description'] . $item['Image'] . $item['FoodID'];
-//            echo "<br>";
-//        }
-        $json = json_encode($json);
-        header('Content-Type: application/json');
-        echo $json;
-    }
-    else {
-        echo "Error database";
-    }
+$query = sprintf('INSERT INTO pur_his VALUE ("%s","%s",%d,"%s")',
+    "thanh@gmail.com",
+    $key,
+    intval($value),
+    $date);
+
+$result = mysqli_query($conn, $query);
+
+if (!$result) {
+    die("Error database");
 }
+//                $text .= $query;
+mysqli_close($conn);
+?>
