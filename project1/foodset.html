@@ -30,16 +30,27 @@
             border-radius: 8px;
             color: white;
         }
-        #suggest_panel p:hover{
+
+        #order > div > button {
+            background-color: gold;
+            border-radius: 5px;
+        }
+        #order > div{
+            position: relative;
+            float: right;
+        }
+
+        #suggest_panel p:hover {
             color: #2aabd2;
         }
+
         #cart {
             width: 100%;
         }
 
         td {
             padding: 10px;
-            width: 25%;
+            width: 20%;
         }
 
         td button {
@@ -48,7 +59,6 @@
             float: right;
             background-color: white;
             border: none;
-
         }
 
         td button:hover {
@@ -57,7 +67,8 @@
     </style>
 </head>
 
-<body">
+<body
+">
 <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
     <div class="container">
         <div class="navbar-header">
@@ -124,12 +135,19 @@
                     <td>Food Name</td>
                     <td>Food ID</td>
                     <td>Quantity</td>
+                    <td>Price/dietary</td>
                     <td>
                         <button type="submit" onclick="clearBox('cart')">Remove all</button>
                     </td>
                 </tr>
             </table>
             <table id="cart"></table>
+            <hr>
+            <div>
+                <span>0</span>
+                 VND &nbsp&nbsp&nbsp&nbsp
+                <button type="submit" onclick="">Submit</button>
+            </div>
         </div>
     </div>
 </div>

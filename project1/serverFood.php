@@ -63,7 +63,7 @@ if (isset($_GET['place']) && $_GET['place'] != ""){
 }
 if (isset($_GET['fplace']) && $_GET['fplace'] != ""){
     $fplace = mysqli_real_escape_string($conn, $_GET['fplace']);
-    $query = sprintf('SELECT f.Foodname,f.Description,f.Image,f.FoodID
+    $query = sprintf('SELECT f.Foodname,f.Description,f.Image,f.FoodID,p.Price
                             FROM food as f, purchase as p
                             WHERE f.FoodID = p.FoodID
                             AND p.StoreID = "%s"', $fplace);

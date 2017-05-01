@@ -18,20 +18,34 @@ function startIfUser(str) {
 $('body').on('load', checkUser());
 // $('body').on('load',checkUser(),showFood('all'));
 
-function fetchFood(response, idHTML) {
+function fetchFood(response, idHTML, isPrice) {
     var myObj = JSON.parse(response);
-    if (!myObj.length){
+    if (!myObj.length) {
         console.log('empty');
         return
     }
     var text = "";
-    for (i = 0; i < myObj.length; i++) {
-        text += insertDisplay(myObj[i]['Image'],
-            myObj[i]['Foodname'],
-            myObj[i]['Description'],
-            myObj[i]['FoodID']
-        );
+    if (isPrice === false) {
+        for (i = 0; i < myObj.length; i++) {
+            text += insertDisplay(myObj[i]['Image'],
+                myObj[i]['Foodname'],
+                myObj[i]['Description'],
+                myObj[i]['FoodID'],
+                "Price varying"
+            );
+        }
     }
+    else {
+        for (i = 0; i < myObj.length; i++) {
+            text += insertDisplay(myObj[i]['Image'],
+                myObj[i]['Foodname'],
+                myObj[i]['Description'],
+                myObj[i]['FoodID'],
+                "Price: " + myObj[i]['Price'] + " VND"
+            );
+        }
+    }
+
     document.getElementById(idHTML).innerHTML = text;
 }
 function checkUser() {
@@ -57,8 +71,6 @@ function showPlace(str) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
-                // fetchPlace(this.responseText);
-
                 var myObj = JSON.parse(this.responseText);
                 var suggest_panel = $('#suggest_panel');
                 suggest_panel.text('');
@@ -68,7 +80,7 @@ function showPlace(str) {
                         myObj[i]['StoreName'] + '\', \'' +
                         myObj[i]['Address'] + '\',\'' +
                         myObj[i]['StoreID'] + '\')">' +
-                        myObj[i]['StoreID'] + '</p>';
+                        myObj[i]['StoreName'] + '</p>';
                     suggest_panel.append(text);
                 }
 
@@ -87,7 +99,7 @@ function foodAssoWithPlace(storeID) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
-                fetchFood(this.responseText, "delivery");
+                fetchFood(this.responseText, "delivery", true);
             }
         };
         xmlhttp.open("GET", "serverFood.php?" + fplace, true);
@@ -120,7 +132,7 @@ function showFood(str) {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
-                fetchFood(this.responseText, "display");
+                fetchFood(this.responseText, "display", false);
             }
         };
         xmlhttp.open("GET", "serverFood.php?" + food, true);
@@ -135,7 +147,7 @@ function clearBox2(elementID) {
     // document.getElementById(elementID).innerHTML = "<tr></tr>";
     $("#" + elementID).remove();
 }
-function insertDisplay(img, name, description, id) {
+function insertDisplay(img, name, description, id, price) {
     img = 'wow.jpg';
     var text = '<div class="col-sm-4" >';
     text += '<div class="thumbnail" style="height: 450px;">';
@@ -143,7 +155,10 @@ function insertDisplay(img, name, description, id) {
     text += '<div class="caption">';
     text += '<h3>' + name + '</h3>';
     text += '<p>' + description + '</p>';
-    text += '<p><button id="' + id + '" onclick="getFood(this.id)" class="btn btn-success btn-lg"> Order </button> </p>';
+    text += '<hr>';
+    text += '<p>' + price + '</p>';
+    price = price.replace( /^\D+/g, '');
+    text += '<p><button id="' + id + '" value="' + price + '" onclick="getFood(this.id,this.value)" class="btn btn-success btn-lg"> Order </button> </p>';
     text += '</div>';
     text += '</div>';
     text += '</div>';
@@ -151,7 +166,7 @@ function insertDisplay(img, name, description, id) {
 
     return text;
 }
-function addCart(name, id) {
+function addCart(name, id, price) {
     if ($("tr#" + id).length !== 0) {
         //does exist tr with id == id
         var element = $('td[name="' + id + '"');
@@ -164,6 +179,7 @@ function addCart(name, id) {
         var text = "<td>" + name + "</td>";
         text += "<td>" + id + "</td>";
         text += "<td name='" + id + "'>1</td>";
+        text += "<td>" + price + "</td>";
         text += '<td><button type="submit" onclick="clearBox2(\'' + id + '\')">Unselect item</button></td>';
 
         var tr = document.createElement('tr');
@@ -171,9 +187,20 @@ function addCart(name, id) {
         tr.innerHTML = text;
         document.getElementById('cart').appendChild(tr);
     }
-
 }
-function getFood(foodid) {
+function calSum() {
+    var table = $('#cart');
+    var total = 0;
+    table.find('tr').each(function () {
+        var td = $(this).find('td');
+        var quantity = parseInt(td.eq(2).text());
+        var price = parseInt(td.eq(3).text());
+        total += quantity*price;
+    });
+    var element = $('#order div span');
+    element.text(total);
+}
+function getFood(foodid, price) {
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
@@ -182,8 +209,9 @@ function getFood(foodid) {
                 $('#order').append(this.responseText);
             }
             else {
-                var jsonObj = JSON.parse(this.responseText);
-                addCart(jsonObj[0]['Foodname'], foodid);
+                var myObj = JSON.parse(this.responseText);
+                addCart(myObj[0]['Foodname'], foodid, price);
+                calSum();
             }
         }
     };
