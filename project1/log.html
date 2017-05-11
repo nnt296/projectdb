@@ -1,190 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
+<head>
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Login</title>
-        
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/css/form-elements.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="icon" href="icon.jpg">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/form-elements.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="icon.jpg">
 
-        <!-- Favicon and touch icons -->
-        <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    </head>
+    <!-- Favicon and touch icons -->
+    <!-- <link rel="shortcut icon" href="assets/ico/favicon.png"> -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
-    <body>
-    <!-- navigation bar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
-      <div class="container">
+</head>
+
+<body>
+<!-- navigation bar -->
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-default">
+    <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.php">DOGE</a>
-          <!-- <a class="navbar-brand" href="index.php"><img src="doge.jpg"></a> -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.php">DOGE</a>
+            <!-- <a class="navbar-brand" href="index.php"><img src="doge.jpg"></a> -->
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.php">Home Page</a></li>
-            <li><a href="#">Food Set</a></li>
-            <li class="active"><a href="#">Login</a></li>
-          </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.php">Home Page</a></li>
+                <li><a href="#">Food Set</a></li>
+                <li class="active"><a href="#">Login</a></li>
+            </ul>
         </div><!--/.navbar-collapse -->
-      </div>
-    </nav>
-    <!-- end navigation bar -->
+    </div>
+</nav>
+<!-- end navigation bar -->
 
-        <!-- Top content -->
-        <div class="top-content">
-        	
-          <div class="inner-bg">
-            <div class="container">
-                    
-              <div class="row">
+<!-- Top content -->
+<div class="top-content">
+
+    <div class="inner-bg">
+        <div class="container">
+
+            <div class="row">
                 <div class="col-sm-5">
-                        	
-                  <div class="form-box">
-	                <div class="form-top">
-	                   	<div class="form-top-left">
-	                        <h3><strong>Login to our site</strong></h3>
-	                        <p>Enter username and password to log on:</p>
-	                    </div>
-	                    <div class="form-top-right">
-	                        <i class="fa fa-key"></i>
-	                    </div>
-	                </div>
-	              <div class="form-bottom">
-				    <form role="form" action="login.php" method="post" class="login-form">
-				       <div class="form-group">
-				        <label class="sr-only" for="form-username">Email</label>
-				        <input type="text" name="email" placeholder="Email address..." class="form-username form-control" id="form-username">
-				       </div>
-				       <div class="form-group">
-				        <label class="sr-only" for="form-password">Password</label>
-				        <input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
-				       </div>
-				        <button type="submit" class="btn" name="signin">Sign in!</button>
-                        <br>
-                        <br>
-				    </form>
-                    <p class="text-center"><strong>...or login with:</strong></p>
-                    <div id="checklogin"></div>
-			       </div>
-		          </div>
-		                
-		      <div class="social-login">
-	                        	<!-- <h3 style="color: black;"><strong>...or login with:</strong></h3> -->
-	           <div class="social-login-buttons">
-		          <a class="btn btn-link-1 btn-link-1-facebook" href="#">
-		              <i class="fa fa-facebook"></i> Facebook
-		          </a>
-		          <a class="btn btn-link-1 btn-link-1-twitter" href="#">
-		              <i class="fa fa-twitter"></i> Twitter
-		          </a>
-		          <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
-		              <i class="fa fa-google-plus"></i> Google Plus
-		          </a>
-	           </div>
-	          </div>
-              
-            </div>
-                        
-            <div class="col-sm-1 middle-border"></div>
-              <div class="col-sm-1"></div>
-                        	
-                <div class="col-sm-5">	
-                  <div class="form-box">
-                    <div class="form-top">
-	                   <div class="form-top-left">
-	                    <h3><strong>Sign up now</strong></h3>
-	                    <p>Fill in the form below to get instant access:</p>
-	                   </div>
-	                   <div class="form-top-right">
-	                    <i class="fa fa-pencil"></i>
-	                   </div>
-	                </div>
-	                <div class="form-bottom">
-				       <form role="form" action="signup.php" method="POST" class="registration-form">
-				          <div class="form-group">
-				            <label class="sr-only" for="form-first-name">First name</label>
-				            <input type="text" name="fname" placeholder="First name..." class="form-first-name form-control" id="form-first-name">
-				          </div>
-				          <div class="form-group">
-				            <label class="sr-only" for="form-last-name">Last name</label>
-				            <input type="text" name="lname" placeholder="Last name..." class="form-last-name form-control" id="form-last-name">
-				          </div>
-				          <div class="form-group">
-				            <label class="sr-only" for="form-email">Email</label>
-				            <input type="text" name="emailadd" placeholder="Email..." class="form-email form-control" id="form-email">
-				          </div>
-				          <div class="form-group">
-                            <label class="sr-only" for="form-password">Password</label>
-                            <input type="password" name="npassword" placeholder="New Password..." class="form-password form-control" id="form-password">
-                          </div>
-				          <button type="submit" class="btn" name="signup">Sign me up!</button>
-				       </form>
-                       <br>
-                       <div id="checksignup"></div>
-			        </div>
-                   </div>
-                        	
+
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3><strong>Login to our site</strong></h3>
+                                <p>Enter username and password to log on:</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-key"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form role="form" action="login.php" method="post" class="login-form">
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-username">Email</label>
+                                    <input type="text" name="email" placeholder="Email address..."
+                                           class="form-username form-control" id="form-username">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Password</label>
+                                    <input type="password" name="password" placeholder="Password..."
+                                           class="form-password form-control" id="form-password">
+                                </div>
+                                <button type="submit" class="btn" name="signin">Sign in!</button>
+                                <br>
+                                <br>
+                            </form>
+                            <p class="text-center"><strong>...or login with:</strong></p>
+                            <div id="checklogin"></div>
+                        </div>
+                    </div>
+
+                    <div class="social-login">
+                        <!-- <h3 style="color: black;"><strong>...or login with:</strong></h3> -->
+                        <div class="social-login-buttons">
+                            <a class="btn btn-link-1 btn-link-1-facebook" href="#">
+                                <i class="fa fa-facebook"></i> Facebook
+                            </a>
+                            <a class="btn btn-link-1 btn-link-1-twitter" href="#">
+                                <i class="fa fa-twitter"></i> Twitter
+                            </a>
+                            <a class="btn btn-link-1 btn-link-1-google-plus" href="#">
+                                <i class="fa fa-google-plus"></i> Google Plus
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
-              </div>
-                 
-          </div>
+
+                <div class="col-sm-1 middle-border"></div>
+                <div class="col-sm-1"></div>
+
+                <div class="col-sm-5">
+                    <div class="form-box">
+                        <div class="form-top">
+                            <div class="form-top-left">
+                                <h3><strong>Sign up now</strong></h3>
+                                <p>Fill in the form below to get instant access:</p>
+                            </div>
+                            <div class="form-top-right">
+                                <i class="fa fa-pencil"></i>
+                            </div>
+                        </div>
+                        <div class="form-bottom">
+                            <form role="form" action="signup.php" method="POST" class="registration-form">
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-first-name">First name</label>
+                                    <input type="text" name="fname" placeholder="First name..."
+                                           class="form-first-name form-control" id="form-first-name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-last-name">Last name</label>
+                                    <input type="text" name="lname" placeholder="Last name..."
+                                           class="form-last-name form-control" id="form-last-name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-email">Email</label>
+                                    <input type="text" name="emailadd" placeholder="Email..."
+                                           class="form-email form-control" id="form-email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="form-password">Password</label>
+                                    <input type="password" name="npassword" placeholder="New Password..."
+                                           class="form-password form-control" id="form-password">
+                                </div>
+                                <button type="submit" class="btn" name="signup">Sign me up!</button>
+                            </form>
+                            <br>
+                            <div id="checksignup"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-            
+    </div>
+
+</div>
+
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-8 col-sm-offset-2">
+                <div class="footer-border"></div>
+                <p>Made by Anli Zaimi at <a href="http://azmind.com" target="_blank"><strong>AZMIND</strong></a>
+                    having a lot of fun. <i class="fa fa-smile-o"></i></p>
+            </div>
+
         </div>
+    </div>
+</footer>
 
+<!-- Javascript -->
+<script src="assets/js/jquery-1.11.1.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.backstretch.min.js"></script>
+<script src="assets/js/scripts.js"></script>
 
-        <!-- Footer -->
-        <footer>
-        	<div class="container">
-        		<div class="row">
-        			
-        			<div class="col-sm-8 col-sm-offset-2">
-        				<div class="footer-border"></div>
-        				<p>Made by Anli Zaimi at <a href="http://azmind.com" target="_blank"><strong>AZMIND</strong></a> 
-        					having a lot of fun. <i class="fa fa-smile-o"></i></p>
-        			</div>
-        			
-        		</div>
-        	</div>
-        </footer>
+<!--[if lt IE 10]>
+<script src="assets/js/placeholder.js"></script>
+<![endif]-->
 
-        <!-- Javascript -->
-        <script src="assets/js/jquery-1.11.1.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.backstretch.min.js"></script>
-        <script src="assets/js/scripts.js"></script>
-        
-        <!--[if lt IE 10]>
-            <script src="assets/js/placeholder.js"></script>
-        <![endif]-->
+</body>
 
-    </body>
-    
 </html>

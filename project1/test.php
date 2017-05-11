@@ -9,23 +9,8 @@
 //// encode the PHP variable to JSON and send it back on client-side
 //echo json_encode($v);
 
-require_once('connectdb.php');
-mysqli_select_db($conn, 'user');
-$date = date('Y-m-d H:i:s');
-$key = "NO004";
-$value = "1";
-
-$query = sprintf('INSERT INTO pur_his VALUE ("%s","%s",%d,"%s")',
-    "thanh@gmail.com",
-    $key,
-    intval($value),
-    $date);
-
-$result = mysqli_query($conn, $query);
-
-if (!$result) {
-    die("Error database");
+session_start();
+if (isset($_POST)){
+    echo $_POST['email'] . $_POST['password'];
 }
-//                $text .= $query;
-mysqli_close($conn);
 ?>

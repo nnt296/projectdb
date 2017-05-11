@@ -30,6 +30,9 @@ if (!isset($_SESSION['login_user'])) {
                 if (!$result){
                     die("Error database");
                 }
+                else {
+                    echo "Success";
+                }
             }
         }
     }

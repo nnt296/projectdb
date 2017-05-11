@@ -25,9 +25,9 @@ function getProfile() {
                 '<p style="font-size: 120%;">' +
                 '<i class="glyphicon glyphicon-envelope"> ' + myObj[0]['Email'] + ' </i> ' +
                 '<br>' +
-                '<i class="glyphicon glyphicon-gift">' + myObj[0]['Birthday'] + ' </i> ' +
+                '<i class="glyphicon glyphicon-gift"> ' + myObj[0]['Birthday'] + ' </i> ' +
                 '<br>' +
-                '<i class="glyphicon glyphicon-phone">' + myObj[0]['Phone'] + '</i> ' +
+                '<i class="glyphicon glyphicon-phone"> ' + myObj[0]['Phone'] + '</i> ' +
                 '<br>' +
                 '</p>' +
                 '</div>';
@@ -67,67 +67,89 @@ function startIfUser(str) {
 function getEdit() {
     var element = $('#wheretoshow');
     element.text("");
-
-    var text = '<div class="alert alert-info alert-dismissable"> ' +
-        '<a class="panel-close close" data-dismiss="alert">×</a> ' +
-        '<i class="fa fa-coffee"></i>' +
-        'This is an <strong>.alert</strong>. Use this to show important messages to the user. ' +
-        '</div> ' +
-        '<h3>Personal info</h3>' +
-        '<form class="form-horizontal" role="form">' +
-        '<div class="form-group"> ' +
-        '<label class="col-lg-3 control-label">First name:</label> ' +
-        '<div class="col-lg-8"> ' +
-        '<input class="form-control" type="text" value="Jane"> ' +
-        '</div> ' +
-        '</div> ' +
-        '<div class="form-group"> ' +
-        '<label class="col-lg-3 control-label">Last name:</label> ' +
-        '<div class="col-lg-8"> ' +
-        '<input class="form-control" type="text" value="Bishop"> ' +
-        '</div> ' +
-        '</div> ' +
-        '<div class="form-group"> ' +
-        '<label class="col-lg-3 control-label">Address:</label> ' +
-        '<div class="col-lg-8"> ' +
-        '<input class="form-control" type="text" value=""> ' +
-        '</div> ' +
-        '</div> ' +
-        '<div class="form-group"> ' +
-        '<label class="col-lg-3 control-label">DOB:</label> ' +
-        '<div class="col-lg-8"> ' +
-        '<input class="form-control" type="text" value="19-05-1996"> ' +
-        '</div> ' +
-        '</div> ' +
-        '<div class="form-group"> ' +
-        '<label class="col-md-3 control-label">Username:</label> ' +
-        '<div class="col-md-8"> ' +
-        '<input class="form-control" type="text" value="janeuser"> ' +
-        '</div> ' +
-        '</div> ' +
-        '<div class="form-group"> ' +
-        '<label class="col-md-3 control-label">Password:</label> ' +
-        '<div class="col-md-8"> ' +
-        '<input class="form-control" type="password" value="11111122333"> ' +
-        '</div> ' +
-        '</div> ' +
-        '<div class="form-group"> ' +
-        '<label class="col-md-3 control-label">Confirm password:</label> ' +
-        '<div class="col-md-8"> ' +
-        '<input class="form-control" type="password" value="11111122333"> ' +
-        '</div> ' +
-        '</div> ' +
-        '<div class="form-group"> ' +
-        '<label class="col-md-3 control-label"></label> ' +
-        '<div class="col-md-8"> ' +
-        '<input type="button" class="btn btn-primary" value="Save Changes"> ' +
-        // '<span></span> ' +
-        // '<input type="reset" class="btn btn-default" value="Cancel"> ' +
-        '</div> ' +
-        '</div> ' +
-        '</form> ' +
-        '</div>';
-    element.html(text);
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            var myObj = JSON.parse(this.responseText);
+            if ("status" in myObj[0]) {
+                element.html('<br><p><strong>No Record!!!</strong></p>');
+                return;
+            }
+            var text = '<div class="alert alert-info alert-dismissable"> ' +
+                '<a class="panel-close close" data-dismiss="alert">×</a> ' +
+                '<i class="fa fa-coffee"></i>' +
+                'This is an <strong>.alert</strong>. Use this to show important messages to the user. ' +
+                '</div> ' +
+                '<h3>Personal info</h3>' +
+                '<form class="form-horizontal" role="form">' +
+                '<div class="form-group"> ' +
+                '<label class="col-lg-3 control-label">First name:</label> ' +
+                '<div class="col-lg-8"> ' +
+                '<input class="form-control" type="text" name="fname" value="' + myObj[0]['First_Name'] + '"> ' +
+                '</div> ' +
+                '</div> ' +
+                '<div class="form-group"> ' +
+                '<label class="col-lg-3 control-label">Last name:</label> ' +
+                '<div class="col-lg-8"> ' +
+                '<input class="form-control" type="text" name="lname" value="' + myObj[0]['Last_Name'] + '"> ' +
+                '</div> ' +
+                '</div> ' +
+                '<div class="form-group"> ' +
+                '<label class="col-lg-3 control-label">Address:</label> ' +
+                '<div class="col-lg-8"> ' +
+                '<input class="form-control" type="text" name="address" value="' + myObj[0]['Address'] + '"> ' +
+                '</div> ' +
+                '</div> ' +
+                '<div class="form-group"> ' +
+                '<label class="col-lg-3 control-label">DOB:</label> ' +
+                '<div class="col-lg-8"> ' +
+                '<input class="form-control" type="text" name="dob" value="' + myObj[0]['Birthday'] + '"> ' +
+                '</div> ' +
+                '</div> ' +
+                '<div class="form-group"> ' +
+                '<label class="col-md-3 control-label">Password:</label> ' +
+                '<div class="col-md-8"> ' +
+                '<input class="form-control" type="password" name="password" value="' + myObj[0]['Password'] + '"> ' +
+                '</div> ' +
+                '</div> ' +
+                '<div class="form-group"> ' +
+                '<label class="col-md-3 control-label">Confirm password:</label> ' +
+                '<div class="col-md-8"> ' +
+                '<input class="form-control" type="password" value="' + myObj[0]['Password'] + '"> ' +
+                '</div> ' +
+                '</div> ' +
+                '<div class="form-group"> ' +
+                '<label class="col-md-3 control-label"></label> ' +
+                '<div class="col-md-8"> ' +
+                '<input type="button" class="btn btn-primary" value="Save Changes" onclick="setEdit()"> ' +
+                '</div> ' +
+                '</div> ' +
+                '<div id="result"></div>' +
+                '</form>' +
+                '</div>';
+            element.html(text);
+        }
+    };
+    xmlhttp.open("GET", "user.php?acc=edit", true);
+    xmlhttp.send();
+}
+function setEdit(){
+    var fname = $('input[name="fname"]').val();
+    var lname = $('input[name="lname"]').val();
+    var address = $('input[name="address"]').val();
+    var dob = $('input[name="dob"]').val();
+    var password = $('input[name="password"]').val();
+    var dict = [];
+    var element = {};
+    element['fname'] = fname;
+    element['lname'] = lname;
+    element['address'] = address;
+    element['dob'] = dob;
+    element['password'] = password;
+    dict.push(element);
+    $.post("user.php", {submit: JSON.stringify(dict)}, function (result) {
+        $('#result').text(result);
+    });
 }
 function getPurHis() {
     var element = $('#wheretoshow');
