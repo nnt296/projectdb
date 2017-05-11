@@ -8,7 +8,7 @@ function startIfUser(str) {
             '<a href="#" class="dropdown-toggle" data-toggle="dropdown" ' +
             'role="button" aria-haspopup="true" aria-expanded="false">' + str + '<span class="caret"></span></a>' +
             '<ul class="dropdown-menu">' +
-            '<li><a href="user.php?acc=buyer">View profile</a></li>' +
+            '<li><a href="user.html">View profile</a></li>' +
             '<li><a href="logout.php">Logout</a></li> ' +
             '</ul>' +
             '</li>';
@@ -63,6 +63,7 @@ function checkUser() {
 }
 
 function showPlace(str) {
+    $('#suggest_panel').css('visibility','visible');
     if (str === "") {
         document.getElementById("suggest_panel").innerHTML = "";
     }
@@ -74,13 +75,17 @@ function showPlace(str) {
                 var myObj = JSON.parse(this.responseText);
                 var suggest_panel = $('#suggest_panel');
                 suggest_panel.text('');
-                for (i = 0; i < myObj.length; i++) {
-                    var text = '<p onmouseup="displayPlace(\'' +
+                for (i = 0; i < 5; i++) {
+                    var text = '<p><a href="#delivery" onmouseup="displayPlace(\'' +
                         myObj[i]['Image'] + '\',\'' +
                         myObj[i]['StoreName'] + '\', \'' +
                         myObj[i]['Address'] + '\',\'' +
                         myObj[i]['StoreID'] + '\')">' +
-                        myObj[i]['StoreName'] + '</p>';
+                        myObj[i]['StoreName'] + '</a></p>';
+                    suggest_panel.append(text);
+                }
+                if(myObj.length>5){
+                    var text = '<a href="">Show More</a>';
                     suggest_panel.append(text);
                 }
 
@@ -122,6 +127,7 @@ function displayPlace(Image, StoreName, Address, StoreID) {
         '<div id="delivery">' + StoreID + '</div>';
     $('#display').html(text);
     foodAssoWithPlace(StoreID);
+    $('#suggest_panel').css('visibility','hidden');
 }
 function showFood(str) {
     if (str === "") {
@@ -158,13 +164,17 @@ function insertDisplay(img, name, description, id, price) {
     text += '<hr>';
     text += '<p>' + price + '</p>';
     price = price.replace( /^\D+/g, '');
-    text += '<p><button id="' + id + '" value="' + price + '" onclick="getFood(this.id,this.value)" class="btn btn-success btn-lg"> Order </button> </p>';
+    text += '<p><button id="' + id + '" value="' + price + '" onclick="displayCart(this.id,this.value)" class="btn btn-success btn-lg"> Order </button> </p>';
     text += '</div>';
     text += '</div>';
     text += '</div>';
     text += '</div>';
 
     return text;
+}
+function displayCart (id,value){
+    getFood(id,value);
+    $('#order').css('visibility','visible');
 }
 function addCart(name, id, price) {
     if ($("tr#" + id).length !== 0) {
@@ -219,6 +229,7 @@ function getFood(foodid, price) {
     xmlhttp.send();
 }
 
+
 function payment() {
     var dict = [];
     var table = $('#cart');
@@ -235,3 +246,5 @@ function payment() {
        $('#temp').text(result);
     });
 }
+
+// $('#search').focusout(function($('#suggest_panel').text('');));
