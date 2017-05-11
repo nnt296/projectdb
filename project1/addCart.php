@@ -40,7 +40,9 @@ if (!isset($_SESSION['login_user'])) {
         if ($_GET['state'] == 'add') {
             $code = mysqli_real_escape_string($conn, stripslashes($_GET['code']));
 
-            $query = sprintf('SELECT Foodname FROM food WHERE FoodID = "%s"', $code);
+            $query = sprintf('SELECT f.Name,d.DishID,d.Price 
+                                    FROM food f NATURAL JOIN dish d 
+                                    WHERE d.DishID = %s', $code);
             $result = mysqli_query($conn, $query);
             $count = mysqli_num_rows($result);
 

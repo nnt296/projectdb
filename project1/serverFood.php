@@ -12,12 +12,10 @@ if (isset($_GET['cat']) && $_GET['cat']!= ""){
 
     $cat = mysqli_real_escape_string($conn,$_GET['cat']);
     if ($cat == "all"){
-        $query = 'SELECT Foodname,Description,Image,FoodID FROM food';
+        $query = 'SELECT * FROM food';
     }
     else {
-        $query = sprintf('SELECT Foodname,Description,Image,FoodID 
-                             FROM food 
-                             WHERE Category1 LIKE "%%%s%%"',$cat);
+        $query = sprintf('SELECT * FROM food WHERE Name LIKE "%%%s%%"',$cat);
     }
     mysqli_select_db($conn,"user");
     $result = mysqli_query($conn,$query);
@@ -39,11 +37,30 @@ if (isset($_GET['cat']) && $_GET['cat']!= ""){
 if (isset($_GET['place']) && $_GET['place'] != ""){
 
     $place = mysqli_real_escape_string($conn, $_GET['place']);
-    $query = sprintf('SELECT DISTINCT v.StoreID, v.StoreName, v.Address, v.Image
-                            FROM vendor as v, food as f, purchase as p
-                            WHERE v.StoreID = p.StoreID
-                            AND f.FoodID = p.FoodID
-                            AND f.Foodname LIKE "%%%s%%"', $place);
+    $query = sprintf('SELECT * FROM vendor
+                            WHERE Vendor_Name LIKE "%%%s%%"', $place);
+    mysqli_select_db($conn,"user");
+    $result = mysqli_query($conn,$query);
+    $count = mysqli_num_rows($result);
+
+    if ($count > 0){
+        $json = [];
+        while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+            array_push($json,$row);
+        }
+        $json = json_encode($json);
+        header('Content-Type: application/json');
+        echo $json;
+    }
+    else {
+        echo "<p>Error databases</p>";
+    }
+}
+if (isset($_GET['splace']) && $_GET['splace'] != ""){
+
+    $splace = mysqli_real_escape_string($conn, $_GET['splace']);
+    $query = sprintf('SELECT * FROM vendor
+                            WHERE VendorID = %s', $splace);
     mysqli_select_db($conn,"user");
     $result = mysqli_query($conn,$query);
     $count = mysqli_num_rows($result);
@@ -63,10 +80,9 @@ if (isset($_GET['place']) && $_GET['place'] != ""){
 }
 if (isset($_GET['fplace']) && $_GET['fplace'] != ""){
     $fplace = mysqli_real_escape_string($conn, $_GET['fplace']);
-    $query = sprintf('SELECT f.Foodname,f.Description,f.Image,f.FoodID,p.Price
-                            FROM food as f, purchase as p
-                            WHERE f.FoodID = p.FoodID
-                            AND p.StoreID = "%s"', $fplace);
+    $query = sprintf('SELECT f.Name,f.Description,f.Image,f.FoodID,d.Price,d.DishID
+                            FROM food as f NATURAL JOIN dish d
+                            WHERE d.VendorID = %s', $fplace);
     mysqli_select_db($conn,"user");
     $result = mysqli_query($conn,$query);
     $count = mysqli_num_rows($result);
@@ -79,6 +95,28 @@ if (isset($_GET['fplace']) && $_GET['fplace'] != ""){
         $json = json_encode($json);
         header('Content-Type: application/json');
         echo $json;
+    }
+}
+if (isset($_GET['fprice']) && $_GET['fprice'] != ""){
+    $fprice = mysqli_real_escape_string($conn, $_GET['fprice']);
+    $query = sprintf('SELECT v.Vendor_Name, v.Open_Time, v.Close_Time, v.Quality, d.DishID, d.Price
+                            FROM dish d NATURAL JOIN vendor v
+                            WHERE d.FoodID="%s"', $fprice);
+    mysqli_select_db($conn,"user");
+    $result = mysqli_query($conn,$query);
+    $count = mysqli_num_rows($result);
+
+    if ($count > 0){
+        $json = [];
+        while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+            array_push($json,$row);
+        }
+        $json = json_encode($json);
+        header('Content-Type: application/json');
+        echo $json;
+    }
+    else {
+        echo "Error";
     }
 }
 mysqli_close($conn);

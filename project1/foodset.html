@@ -147,22 +147,12 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <form>
-                <strong class="text-uppercase"><p>Select food base on Category </p></strong>
-                <select name="food" onchange="showFood(this.value)">
-                    <option value="">Select category</option>
-                    <option value="all">All</option>
-                    <option value="bún">Bún</option>
-                    <option value="bánh đa">Bánh Đa</option>
-                    <option value="miến">Miến</option>
-                    <option value="cơm">Cơm</option>
-                    <option value="phở">Phở</option>
-                </select>
-            </form>
+            <strong class="text-uppercase"><p>Any Special restaurant?</p></strong>
+            <input type="text" size="30" id="showPlace" onkeyup="showPlace(this.value)">
         </div>
         <div class="col-sm-6">
-            <strong class="text-uppercase"><p>Select Place based on Food </p></strong>
-            <input type="text" size="30" onkeyup="showPlace(this.value)">
+            <strong class="text-uppercase"><p>What Food is on your mind?</p></strong>
+            <input type="text" size="30" id="showFood" onkeyup="showFood(this.value)">
         </div>
 
         <div class="col-sm-6"></div>
@@ -204,8 +194,10 @@
 <hr>
 
 <div class="container">
-    <div class="row" id="display">
+    <div class="row">
         <!--Contents got from server will be put here-->
+        <div class="col-sm-12" id="display"></div>
+        <div class="col-sm-12" id="table_vendor_food"></div>
     </div>
 </div>
 
