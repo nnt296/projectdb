@@ -18,7 +18,7 @@
     <script src="./template_files/ie-emulation-modes-warning.js"></script>
 
     <style>
-
+        
         img {
             max-height: 100%;
             max-width: 100%;
@@ -36,8 +36,7 @@
             background-color: gold;
             border-radius: 5px;
         }
-
-        #order > div {
+        #order > div{
             position: relative;
             float: right;
         }
@@ -45,7 +44,6 @@
         #suggest_panel p:hover {
             color: #2aabd2;
         }
-
         #suggest_panel {
             z-index: 1;
             background-color: white;
@@ -54,13 +52,11 @@
             padding-left: 0px;
             margin-left: 0px;
         }
-
-        #gotoCart {
+        #gotoCart{
             position: fixed;
             right: 40px;
             bottom: 40px;
         }
-
         /*#gotoCart > button {
              width: 70px;
               height: 70px;
@@ -69,13 +65,12 @@
               border-radius: 35px;
         }*/
         .btn-circle.btn-xl {
-            width: 70px;
-            height: 70px;
-            font-size: 24px;
-            line-height: 1.33;
-            border-radius: 35px;
+          width: 70px;
+          height: 70px;       
+          font-size: 24px;
+          line-height: 1.33;
+          border-radius: 35px;
         }
-
         #cart {
             width: 100%;
         }
@@ -96,17 +91,15 @@
         td button:hover {
             color: red;
         }
-
-        #zzz {
+        #zzz{
             visibility: hidden;
             position: absolute;
             width: 100%;
             background-color: yellow;
         }
-
-        /*        #order{
-                    visibility: hidden;
-                }*/
+/*        #order{
+            visibility: hidden;
+        }*/
     </style>
 </head>
 
@@ -144,35 +137,43 @@
     </div>
 </div>
 <div id="jumpto"></div>
-<div class="container">
+<div class="container" >
     <div class="row">
         <div class="col-sm-6">
-            <strong class="text-uppercase"><p>Any Special restaurant?</p></strong>
-            <input type="text" size="30" id="showPlace" onkeyup="showPlace(this.value)">
+            <form>
+                <strong class="text-uppercase"><p>Select food base on Category </p></strong>
+                <select name="food" onchange="showFood(this.value)">
+                    <option value="">Select category</option>
+                    <option value="all">All</option>
+                    <option value="bún">Bún</option>
+                    <option value="bánh đa">Bánh Đa</option>
+                    <option value="miến">Miến</option>
+                    <option value="cơm">Cơm</option>
+                    <option value="phở">Phở</option>
+                </select>
+            </form>
         </div>
         <div class="col-sm-6">
-            <strong class="text-uppercase"><p>What Food is on your mind?</p></strong>
-            <input type="text" size="30" id="showFood" onkeyup="showFood(this.value)">
+            <strong class="text-uppercase"><p>Select Place based on Food </p></strong>
+            <input type="text" size="30" onkeyup="showPlace(this.value)">
         </div>
-
-        <div class="col-sm-6"></div>
-        <div class="col-sm-6">
-            <div id="suggest_panel"></div>
-        </div>
-
-
+        
+                <div class="col-sm-6"> </div>
+                <div class="col-sm-6" ><div id="suggest_panel"></div> </div>
+       
+        
     </div>
 </div>
 
 <hr>
 
-<div class="container" id="test">
+<div class="container">
     <div class="row">
         <div class="col-sm-12" id="order">
             <table id="cart-head">
                 <tr>
                     <td>Food Name</td>
-                    <td>Food ID</td>
+                    <td>Dish ID</td>
                     <td>Quantity</td>
                     <td>Price/dietary</td>
                     <td>
@@ -184,63 +185,56 @@
             <hr>
             <div>
                 <span>0</span>
-                VND &nbsp&nbsp&nbsp&nbsp
+                 VND &nbsp&nbsp&nbsp&nbsp
                 <button type="submit" data-toggle="modal" data-target="#myModal">Order</button>
             </div>
         </div>
+        <div id="temp"></div>
     </div>
 </div>
 
 <hr>
 
 <div class="container">
-    <div class="row">
+    <div class="row" id="display">
         <!--Contents got from server will be put here-->
-        <div class="col-sm-12" id="display"></div>
-        <div class="col-sm-12" id="table_vendor_food"></div>
     </div>
 </div>
 
 
 <div id="myModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
+  <div class="modal-dialog">
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Check Out</h4>
-            </div>
-            <div class="modal-body">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Check Out</h4>
+      </div>
+      <div class="modal-body">
 
-                <form role="form" method="post">
-                    <div class="form-group">
-                        <label for="form-username">Receiver name</label>
-                        <input type="text" name="email" placeholder="Receiver name..."
-                               class="form-username form-control" id="form-username">
-                    </div>
-                    <div class="form-group">
-                        <label for="form-phone">Phone number</label>
-                        <input type="text" name="phone" placeholder="Phone number..." class="form-control"
-                               id="form-phone">
-                    </div>
-                    <br>
-                </form>
+            <form role="form" method="post" >
+            <div class="form-group">
+                <label for="form-username">Email</label>
+                <input type="text" name="email" placeholder="Email address..." class="form-username form-control" id="form-username">
             </div>
-            <div id="temp"></div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" onclick="">Confirm</button>
+            <div class="form-group">
+                <label for="form-password">Password</label>
+                <input type="password" name="password" placeholder="Password..." class="form-password form-control" id="form-password">
             </div>
-        </div>
-
+            <br>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" >Confirm</button>
+      </div>
     </div>
+
+  </div>
 </div>
 <div id="gotoCart">
-    <a href="#jumpto">
-        <button class="btn btn-danger btn-circle btn-x1"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
-        </button>
-    </a>
-
+    <a href="#jumpto"><button  class="btn btn-danger btn-circle btn-x1"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true" ></i></button></a>
+    
 </div>
 <!-- Bootstrap core JavaScript
 ================================================== -->
@@ -251,6 +245,15 @@
 <script src="./template_files/bootstrap.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="./template_files/ie10-viewport-bug-workaround.js"></script>
+<script>
+function showPop() {
+    
+    // $('body').css("opacity","0.5");
+    // document.getElementByTagName("body")[0].style.opacity = "0.5";
+    document.getElementById("zzz").style.visibility = "visible";
+    document.getElementById("zzz").style.opacity = "2";
+}
+</script>
 
 </body>
 </html>

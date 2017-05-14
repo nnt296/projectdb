@@ -20,7 +20,7 @@ if (!isset($_SESSION['login_user'])) {
         $text = "";
         foreach ($data as $element){
             foreach ($element as $key=>$value){
-                $query = sprintf('INSERT INTO pur_his VALUE ("%s","%s",%d,"%s")',
+                $query = sprintf('INSERT INTO transaction VALUE ("%s","%s",%d,"%s")',
                     $_SESSION['login_user'],
                     $key,
                     intval($value),
@@ -30,9 +30,6 @@ if (!isset($_SESSION['login_user'])) {
                 if (!$result){
                     die("Error database");
                 }
-                else {
-                    echo "Success";
-                }
             }
         }
     }
@@ -40,9 +37,7 @@ if (!isset($_SESSION['login_user'])) {
         if ($_GET['state'] == 'add') {
             $code = mysqli_real_escape_string($conn, stripslashes($_GET['code']));
 
-            $query = sprintf('SELECT f.Name,d.DishID,d.Price 
-                                    FROM food f NATURAL JOIN dish d 
-                                    WHERE d.DishID = %s', $code);
+            $query = sprintf('SELECT Food_Name FROM food NATURAL JOIN dish WHERE DishID = "%s"', $code);
             $result = mysqli_query($conn, $query);
             $count = mysqli_num_rows($result);
 
