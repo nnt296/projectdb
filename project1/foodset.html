@@ -221,7 +221,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Check Out</h4>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="modal-body">
 
                 <form role="form" method="post">
                     <div class="form-group">
@@ -237,13 +237,34 @@
                     <br>
                 </form>
             </div>
-            <div class="modal-footer">
-                <button id="confirm" type="button" class="btn btn-default">Confirm</button>
+            <div class="modal-footer" id="modal-footer">
+                <button id="confirm" type="button" data-dismiss="modal" class="btn btn-default">Confirm</button>
             </div>
         </div>
-
     </div>
 </div>
+<button hidden id="btnTrigger" data-toggle="modal" data-target="#afterWord"></button>
+<div id="afterWord" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Check Out</h4>
+            </div>
+            <div class="modal-body">
+                <p>You have successfully ordered.</p>
+                <p>Thanks for using our Services !!!</p>
+                <p>Have a good meal !!!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-default">Finish</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div id="gotoCart">
     <a href="#jumpto">
         <button class="btn btn-danger btn-circle btn-x1"><i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i>

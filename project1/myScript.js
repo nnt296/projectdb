@@ -268,9 +268,5 @@ $('#confirm').on('click', function payment() {
     $.post("addCart.php", {submit: JSON.stringify(dict)}, function (result) {
         $('#temp').text(result);
     });
-    var thanks = "<p>Thank you for using our service !!!</p>" +
-        "<p>Have a good meal !!!</p>";
-    $('.modal-body').html(thanks);
-    var button = '<button type="button" class="btn btn-default" data-dismiss="modal">Finish</button>';
-    $('.modal-footer').html(button);
+    $('#btnTrigger').click();
 });
