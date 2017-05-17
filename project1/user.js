@@ -1,7 +1,7 @@
 /**
  * Created by thanhnn on 5/10/2017.
  */
-$('body').on('load', startPage());
+$(startPage());
 function startPage() {
     checkUser();
     getProfile();
@@ -13,7 +13,7 @@ function getProfile() {
         if (this.readyState === 4 && this.status === 200) {
             var myObj = JSON.parse(this.responseText);
             document.getElementById("wheretoshow").innerHTML =
-                '<div class="col-sm-4 ppicture"></div>' +
+                '<div class="col-sm-4 dpicture"><img src="wow.jpg" class="ppicture"></div>' +
                 '<div class="col-sm-1"></div>' +
                 '<div class="col-sm-6 pproperties" id="pproperties">' +
                 '<h1>' + myObj[0]['First_Name'] + ' ' + myObj[0]['Last_Name'] + '</h1>' +
@@ -51,8 +51,8 @@ function checkUser() {
 }
 function startIfUser(str) {
     $(document).ready(function () {
-        var element = $('li').has('a[href="login.php"]');
-        var html = '<li class="dropdown">' +
+        var element = $('li').has('a[href="register.html"]');
+        var html = '<li class="dropdown active">' +
             '<a href="#" class="dropdown-toggle" data-toggle="dropdown" ' +
             'role="button" aria-haspopup="true" aria-expanded="false">' + str + '<span class="caret"></span></a>' +
             '<ul class="dropdown-menu">' +
@@ -115,7 +115,7 @@ function getEdit() {
                 '<div class="form-group"> ' +
                 '<label class="col-md-3 control-label">Confirm password:</label> ' +
                 '<div class="col-md-8"> ' +
-                '<input class="form-control" type="password" value="' + myObj[0]['Password'] + '"> ' +
+                '<input class="form-control" type="password" name="cpassword" value="' + myObj[0]['Password'] + '"> ' +
                 '</div> ' +
                 '</div> ' +
                 '<div class="form-group"> ' +
@@ -139,6 +139,7 @@ function setEdit(){
     var address = $('input[name="address"]').val();
     var dob = $('input[name="dob"]').val();
     var password = $('input[name="password"]').val();
+
     var dict = [];
     var element = {};
     element['fname'] = fname;
@@ -154,7 +155,9 @@ function setEdit(){
 function getPurHis() {
     var element = $('#wheretoshow');
     element.text("");
-    element.html('<table class="table table-striped" id="historytable"></table>');
+    var content = '<p>Your purchase History:</p>' +
+        '<table class="table table-striped" id="historytable"></table>';
+    element.html(content);
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
@@ -164,13 +167,15 @@ function getPurHis() {
                 return;
             }
             else {
+                var table = $('#historytable');
+                table.append("<tr><th>Food Name</th><th>Quantity</th><th>Order Time (yyyy-mm-dd hh-mm-ss)</th></tr>");
                 for (i = 0; i < myObj.length; i++) {
                     var text = '<tr>' +
-                        '<th>' + myObj[i]['DishID'] + '</th>' +
+                        '<th>' + myObj[i]['Food_Name'] + '</th>' +
                         '<th>' + myObj[i]['Quantity'] + '</th>' +
                         '<th>' + myObj[i]['Date'] + '</th>' +
                         '</tr>';
-                    $('#historytable').append(text);
+                    table.append(text);
                 }
             }
         }

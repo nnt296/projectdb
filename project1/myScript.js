@@ -3,13 +3,13 @@
  */
 function startIfUser(str) {
     $(document).ready(function () {
-        var element = $('li').has('a[href="login.php"]');
+        var element = $('li').has('a[href="register.html"]');
         var html = '<li class="dropdown">' +
             '<a href="#" class="dropdown-toggle" data-toggle="dropdown" ' +
             'role="button" aria-haspopup="true" aria-expanded="false">' + str + '<span class="caret"></span></a>' +
             '<ul class="dropdown-menu">' +
             '<li><a href="user.html?acc=buyer">View profile</a></li>' +
-            '<li><a href="logout.php">Logout</a></li> ' +
+            '<li><a href="logout.html">Logout</a></li> ' +
             '</ul>' +
             '</li>';
         element.replaceWith(html);
@@ -253,7 +253,7 @@ function getFood(dishid, price) {
 }
 
 // payment() to collect cart's infor and send to server to complete order
-function payment() {
+$('#confirm').on('click', function payment() {
     var dict = [];
     var table = $('#cart');
     var total = 0;
@@ -268,4 +268,9 @@ function payment() {
     $.post("addCart.php", {submit: JSON.stringify(dict)}, function (result) {
         $('#temp').text(result);
     });
-}
+    var thanks = "<p>Thank you for using our service !!!</p>" +
+        "<p>Have a good meal !!!</p>";
+    $('.modal-body').html(thanks);
+    var button = '<button type="button" class="btn btn-default" data-dismiss="modal">Finish</button>';
+    $('.modal-footer').html(button);
+});

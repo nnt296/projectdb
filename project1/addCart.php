@@ -16,18 +16,29 @@ if (!isset($_SESSION['login_user'])) {
     if (isset($_POST['submit'])) {
         $date = date('Y-m-d H:i:s');
 
-        $data = json_decode($_POST['submit'],true);
+        $data = json_decode($_POST['submit'], true);
         $text = "";
-        foreach ($data as $element){
-            foreach ($element as $key=>$value){
-                $query = sprintf('INSERT INTO transaction VALUE ("%s","%s",%d,"%s")',
-                    $_SESSION['login_user'],
-                    $key,
+        $query = sprintf('SELECT UserID FROM account WHERE Email="%s"', $_SESSION['login_user']);
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        $userID = $row['UserID'];
+
+        foreach ($data as $element) {
+            foreach ($element as $key => $value) {
+                $query = sprintf('SELECT Price FROM dish WHERE DishID=%d', intval($key));
+                $result = mysqli_query($conn, $query);
+                $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                $total = intval($row['Price']) * intval($value);
+
+                $query = sprintf('INSERT INTO transaction VALUE (0,%d,%d,%d,%d,"%s")',
+                    $userID,
+                    intval($key),
                     intval($value),
+                    intval($total),
                     $date);
 
                 $result = mysqli_query($conn, $query);
-                if (!$result){
+                if (!$result) {
                     die("Error database");
                 }
             }

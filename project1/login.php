@@ -1,12 +1,7 @@
 <?php
 ob_start();
 
-function phpAlert ($msg){
-	echo '<script type="text/javascript">alert("' .$msg. '");</script>';
-}
-
-include 'log.html';
-include 'connectdb.php';
+require_once ('connectdb.php');
 if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['signin'])){
 
 	if ($_POST['email'] != "" && $_POST['password'] != ""){
@@ -29,28 +24,17 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['signin'
 
 		$count = mysqli_num_rows($result);
 		if ($count != 1){
-			$warning = '<div class="alert alert-danger text-center">
-	  						<strong>Warning!</strong> Incorrect email or password!
-				  		</div>';
-			$text = '<script type="text/javascript">
-				        document.getElementById("checklogin").innerHTML = "<div class=\"alert alert-warning text-center\"><strong>Warning!</strong> Incorrect email or password! Redirect in 3s!</div>"
-				    </script>';
-			echo $text;
-			header("refresh: 3; url= login.php");
+			echo "Error";
 		} else {
 			session_start();
 			$_SESSION['login_user'] = $email;
-			$success = '<script type="text/javascript">
-				        document.getElementById("checklogin").innerHTML = "<div class=\"alert alert-success text-center\"><strong>Success!</strong> Connected! Redirect in 3s!</div>"
-				    </script>';
-			echo $success;
-			header("refresh: 3; url=index.php");
-			// echo "<script>setTimeout(\"location.href = 'index.php';\",1500);</script>";
+            echo "Success";
 		}
 	}
-
+    else {
+	    echo "Error";
+    }
 }
 
 ob_end_flush();
 ?>
-<!-- 0438687378 -->
