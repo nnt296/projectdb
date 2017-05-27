@@ -28,7 +28,7 @@ if (isset($_GET['foodname']) && isset($_GET['foodcourse']) ){
 // Get a dish by dishname = food name
 if(isset($_GET['dishname'])){
 	$dishname = mysqli_real_escape_string($conn, $_GET['dishname']);
-    $query = 'SELECT d.DishID, f.Food_Name, v.Vendor_Name, d.Price,v.Image, v.Address FROM dish d, vendor v, food f WHERE Food_Name = "'. $dishname .'" AND d.FoodID = f.FoodID AND v.VendorID = d.VendorID';
+    $query = 'SELECT d.DishID, f.Food_Name, v.Vendor_Name, d.Price,v.Image, v.Address, v.Quality FROM dish d, vendor v, food f WHERE Food_Name = "'. $dishname .'" AND d.FoodID = f.FoodID AND v.VendorID = d.VendorID';
     mysqli_select_db($conn,"user");
     $result = mysqli_query($conn,$query);
     $count = mysqli_num_rows($result);
