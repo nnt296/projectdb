@@ -57,7 +57,7 @@ function startIfUser(str) {
             'role="button" aria-haspopup="true" aria-expanded="false">' + str + '<span class="caret"></span></a>' +
             '<ul class="dropdown-menu">' +
             '<li><a href="user.html">View profile</a></li>' +
-            '<li><a href="logout.php">Logout</a></li> ' +
+            '<li><a href="logout.html">Logout</a></li> ' +
             '</ul>' +
             '</li>';
         element.replaceWith(html);
