@@ -1,6 +1,4 @@
-/**
- * Created by ThanhNN on 31/03/2017.
- */
+$(startPage());
 function startIfUser(str) {
     $(document).ready(function () {
         var element = $('li').has('a[href="register.html"]');
@@ -15,7 +13,11 @@ function startIfUser(str) {
         element.replaceWith(html);
     });
 }
-$('body').on('load', checkUser());
+function startPage() {
+    showFood('all');
+    checkUser();
+}
+// $('body').on('load', checkUser);
 // $('body').on('load',checkUser(),showFood('all'));
 
 function fetchFood(response, idHTML, isPrice) {
@@ -177,7 +179,9 @@ function insertDisplay(img, name, description, id, price) {
     text += '<hr>';
     text += '<p>' + price + '</p>';
     price = price.replace(/^\D+/g, '');
-    text += '<p><button id="' + id + '" value="' + price + '" onclick="displayCart(this.id,this.value)" class="btn btn-success btn-lg"> Order </button> </p>';
+    if (price !== ""){
+        text += '<p><button id="' + id + '" value="' + price + '" onclick="displayCart(this.id,this.value)" class="btn btn-success btn-lg"> Order </button> </p>';
+    }
     text += '</div>';
     text += '</div>';
     text += '</div>';
