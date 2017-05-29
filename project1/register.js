@@ -39,6 +39,7 @@ function signup() {
         pass: password,
         signup: "signup"
     }, function (result) {
+        console.log(result);
         if (result === "Null"){
             var warning = '<div class="alert alert-danger text-center"><strong>Warning!</strong> Email && Password are required!</div>';
             $('#checksignup').html(warning);
