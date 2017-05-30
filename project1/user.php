@@ -66,10 +66,15 @@ if (isset($_GET['acc'])) {
         echo $json;
     }
     if ($_GET['acc'] == 'history') {
+        $query = sprintf("SELECT UserID FROM account WHERE Email='%s'",$email);
+        $result = mysqli_query($conn, $query);
+        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+        $userID = $row['UserID'];
+
         $query = sprintf("SELECT f.Food_Name, t.Quantity, date(t.Date) as Date
-                                FROM account a NATURAL JOIN transaction t NATURAL join food f
-                                WHERE a.Email='%s'
-                                ORDER BY t.Date", $email);
+                                FROM transaction t NATURAL join dish d NATURAL JOIN food f
+                                WHERE t.UserID=%d
+                                ORDER BY t.Date", $userID);
         $result = mysqli_query($conn, $query);
         $count = mysqli_num_rows($result);
         $json = [];
