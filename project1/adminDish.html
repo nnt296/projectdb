@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Add dish</title>
+</head>
+<body>
+	<div>
+		<p>Food ID</p>
+		<input type="number" name="" onkeyup="" id="add1">
+	</div>
+	<div>
+		<p>Vendor ID</p>
+		<input type="number" name="" onkeyup="" id="add2">
+	</div>
+	<div>
+		<p>Price</p>
+		<input type="number" name="" step="1000" id="add3">
+	</div>
+	<button onclick="addDish()">Add</button>
+	<script type="text/javascript">
+		function addDish(){
+		    var add1 = document.getElementById("add1").value;
+		    var add2 = document.getElementById("add2").value;
+		    var add3 = document.getElementById("add3").value;
+		    // alert(add1 + "\n" + add2 + "\n" + add3);
+		    var result = new XMLHttpRequest();
+		    // var modal = document.getElementById('myModal');
+		    if(add3 === ''){
+		    	alert("Enter price");
+		    	return;
+		    }
+		    result.onreadystatechange = function () {
+		        if (this.readyState === 4 && this.status === 200) {
+		            if(this.responseText === "true"){
+		                alert('Add Successfully');            }
+		            if(this.responseText === "false"){
+		                alert('Add Unsuccessfully\nCheck Food ID or Vendor ID');
+		            }
+		            // alert(this.responseText);
+		        }
+		    };
+		    result.open("GET", "adminPage.php?addfoodid=" + add1
+		                                    + "&addvendorid=" + add2
+		                                    + "&addprice=" + add3, true);
+		    result.send();
+		}
+	</script>
+	<script src="./template_files/jquery-3.2.1.min.js"></script>
+</body>
+</html>

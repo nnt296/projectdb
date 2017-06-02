@@ -237,7 +237,7 @@ function foodDisplay(foodid, foodname, type, course, description, image) {
     text += '<td>' + type + '</td>';
     text += '<td>' + course + '</td>';
     text += '<td>' + description + '</td>';
-    text += '<td><img width="200" height="200" src="../picture/' + image + '"></td>';
+    text += '<td><img width="200" height="200" src="../Picture/' + image + '"></td>';
     text += '<td><button id="del' + foodid + '"onclick=deleteFood(this.id.substr(3,this.id.length-3))>Delete</button></td>'
     text += '</tr>';
     return text;
@@ -321,7 +321,7 @@ function vendorDisplay(vendorid, vendorname, address, opentime, closetime, quali
     text += '<td>' + service + '</td>';
     text += '<td>' + pricing + '</td>';
     text += '<td>' + space + '</td>';
-    text += '<td><img face" width="200" height="200" src="' + image + '"></td>';
+    text += '<td><img face" width="200" height="200" src="../Picture/' + image + '"></td>';
     text += '<td><button id="del' + vendorid + '"onclick=deleteVendor(this.id.substr(3,this.id.length-3))>Delete</button></td>'
     text += '</tr>';
     return text;
@@ -415,7 +415,7 @@ function dishDisplay(dishid,foodname,vendorname,price,image, mode) {
     text += '<td><a href="#' + foodname +'" class="foodclick" onclick="clickFood(this.innerHTML)">' + foodname + '</a></td>';
     text += '<td><a href="#' + vendorname +'" class="vendorclick" onclick="clickVendor(this.innerHTML)">' + vendorname + '</a></td>';
     text += '<td>' + price + '</td>'
-    text += '<td><img face" width="200" height="200" src="' + image + '"></td>';
+    text += '<td><img face" width="200" height="200" src="../Picture/' + image + '"></td>';
     text += '<td><button id="del' + dishid + '"onclick=deleteDish(this.id.substr(3,this.id.length-3),' + mode +')>Delete</button></td>'
     text += '<td><button id="edi' + dishid + '"onclick=editDish(this.id.substr(3,this.id.length-3),' + mode +')>Edit price</button></td>'
     text += '</tr>';

@@ -256,6 +256,18 @@ if(isset($_GET['passwordedit']) && isset($_GET['phoneedit']) && isset($_GET['add
     // echo($password."\n".$phone."\n".$address."\n".$fname."\n".$lname."\n".$dob."\n".$id);
 }
 
+// Add dish
+if(isset($_GET['addfoodid']) && isset($_GET['addvendorid']) && isset($_GET['addprice']) ){
+    $id1 = $_GET['addfoodid'];
+    $id2 = $_GET['addvendorid'];
+    $price = $_GET['addprice'];
+    $query = 'INSERT INTO dish(FoodID, VendorID, Price) VALUES ('.$id1.','.$id2.','.$price.')';
+    mysqli_select_db($conn,"user");
+    $result = mysqli_query($conn,$query);
+    if($result === true)echo "true";
+    if($result === false)echo "false";
+}
+
 mysqli_close($conn);
 ob_end_flush();
 ?>
