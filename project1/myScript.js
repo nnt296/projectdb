@@ -169,17 +169,17 @@ function clearBox2(elementID) {
 
 // insertDisplay() to insert Cards about food
 function insertDisplay(img, name, description, id, price) {
-    img = 'wow.jpg';
+    var image = "../Picture/" + img;
     var text = '<div class="col-sm-4" >';
     text += '<div class="thumbnail" style="height: 450px;">';
-    text += '<img src="' + img + '">';
+    text += '<img src="' + image + '">';
     text += '<div class="caption">';
     text += '<h3>' + name + '</h3>';
     text += '<p>' + description + '</p>';
     text += '<hr>';
     text += '<p>' + price + '</p>';
     price = price.replace(/^\D+/g, '');
-    if (price !== ""){
+    if (price !== "") {
         text += '<p><button id="' + id + '" value="' + price + '" onclick="displayCart(this.id,this.value)" class="btn btn-success btn-lg"> Order </button> </p>';
     }
     text += '</div>';

@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d9ccf867-1b30-45a0-a34b-d2b0d94c853c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user.php" afterPath="$PROJECT_DIR$/user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myScript.js" afterPath="$PROJECT_DIR$/myScript.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,23 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2961">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1495980767453" expanded="true" signature="988:1004" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
-              <caret line="76" column="59" lean-forward="true" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="59" />
+              <caret line="76" column="59" lean-forward="false" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="59" />
               <folding>
                 <marker date="1496115028254" expanded="true" signature="474:641" ph="UPDATE accou... " />
                 <marker date="1496115028254" expanded="true" signature="1034:1139" ph="SELECT Email... " />
@@ -39,6 +28,29 @@
                 <marker date="1496115028254" expanded="true" signature="2389:2396" ph="SELECT Email... account" />
                 <marker date="1496115028254" expanded="true" signature="2389:2432" ph="SELECT UserI... account" />
                 <marker date="1496115028254" expanded="true" signature="2608:2849" ph="SELECT f.Foo... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="109" column="105" lean-forward="false" selection-start-line="109" selection-start-column="105" selection-end-line="109" selection-end-column="105" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myScript.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/myScript.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="174" column="32" lean-forward="false" selection-start-line="174" selection-start-column="32" selection-end-line="174" selection-end-column="32" />
+              <folding>
+                <marker date="1496420654988" expanded="true" signature="4224:4251" ph="..." />
+                <marker date="1496420654988" expanded="true" signature="5782:5796" ph="..." />
               </folding>
             </state>
           </provider>
@@ -100,15 +112,15 @@
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/addCart.php" />
         <option value="$PROJECT_DIR$/user.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/foodset.html" />
-        <option value="$PROJECT_DIR$/myScript.js" />
         <option value="$PROJECT_DIR$/register.js" />
         <option value="$PROJECT_DIR$/signup.php" />
         <option value="$PROJECT_DIR$/logout.html" />
         <option value="$PROJECT_DIR$/logout.js" />
         <option value="$PROJECT_DIR$/register.html" />
         <option value="$PROJECT_DIR$/user.php" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/myScript.js" />
       </list>
     </option>
   </component>
@@ -144,21 +156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="project1">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -173,6 +170,21 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="project1">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -181,6 +193,159 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="last_opened_file_path" value="D:/Git/Git/cmd/git.exe" />
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/adminPage.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/adminPage.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/adminPage.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/adminPage.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/7up.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/banhdaca.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/banhdanuong.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/banhmihoian.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/banhmipate.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/banhmitrungcha.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/banhmixaxiu.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/bunca.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/buncha.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/bundaumamtom.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/bunoc.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/bunrieucua.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/bunthang.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/capheden.JPG</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/caphesua.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/cocacola.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/comga.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/comsuon.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/fanta.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/khoailangchien.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/khoaitaychien.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/mienngan.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/mienxaocua.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/ngochien.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/pepsi.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/phobo.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/phocuon.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/phoga.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/phomaique.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/phoxao.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/trachanh.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/trada.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/xoiga.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../Picture/xoithit.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/sql/user.sql</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/account.sql</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/food.sql</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/purchase_purchase.sql</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/vendor_vendor.sql</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -316,7 +481,8 @@
       <workItem from="1495981056796" duration="944000" />
       <workItem from="1495982034718" duration="95000" />
       <workItem from="1496039583816" duration="1120000" />
-      <workItem from="1496114483663" duration="577000" />
+      <workItem from="1496114483663" duration="615000" />
+      <workItem from="1496419510886" duration="1321000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed logout page user">
       <created>1495980935842</created>
@@ -360,26 +526,33 @@
       <option name="project" value="LOCAL" />
       <updated>1496040687245</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed Show user's purchase history">
+      <created>1496115083468</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1496115083468</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="172194000" />
+    <option name="totallyTimeSpent" value="173553000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2755102" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2792696" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -421,7 +594,8 @@
     <MESSAGE value="Changed errors in some JS files" />
     <MESSAGE value="Changed footer" />
     <MESSAGE value="Fixed signup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed signup" />
+    <MESSAGE value="Fixed Show user's purchase history" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Show user's purchase history" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -684,18 +858,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="168" column="26" lean-forward="false" selection-start-line="168" selection-start-column="26" selection-end-line="168" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -723,7 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -743,17 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myScript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="274" column="29" lean-forward="true" selection-start-line="274" selection-start-column="29" selection-end-line="274" selection-end-column="29" />
-          <folding>
-            <marker date="1495981941138" expanded="true" signature="4224:4251" ph="..." />
-            <marker date="1495981941138" expanded="true" signature="5766:5780" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2961">
@@ -767,7 +921,7 @@
     <entry file="file://$PROJECT_DIR$/user.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
-          <caret line="76" column="59" lean-forward="true" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="59" />
+          <caret line="76" column="59" lean-forward="false" selection-start-line="76" selection-start-column="59" selection-end-line="76" selection-end-column="59" />
           <folding>
             <marker date="1496115028254" expanded="true" signature="474:641" ph="UPDATE accou... " />
             <marker date="1496115028254" expanded="true" signature="1034:1139" ph="SELECT Email... " />
@@ -775,6 +929,25 @@
             <marker date="1496115028254" expanded="true" signature="2389:2396" ph="SELECT Email... account" />
             <marker date="1496115028254" expanded="true" signature="2389:2432" ph="SELECT UserI... account" />
             <marker date="1496115028254" expanded="true" signature="2608:2849" ph="SELECT f.Foo... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="109" column="105" lean-forward="false" selection-start-line="109" selection-start-column="105" selection-end-line="109" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="174" column="32" lean-forward="false" selection-start-line="174" selection-start-column="32" selection-end-line="174" selection-end-column="32" />
+          <folding>
+            <marker date="1496420654988" expanded="true" signature="4224:4251" ph="..." />
+            <marker date="1496420654988" expanded="true" signature="5782:5796" ph="..." />
           </folding>
         </state>
       </provider>
