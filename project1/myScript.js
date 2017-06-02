@@ -86,11 +86,12 @@ function showPlace(str) {
                         myObj[i]['Vendor_Name'] + '</a></p>';
                     suggest_panel.append(text);
                 }
-                if (myObj.length > 5) {
-                    var text = '<a href="">Show More</a>';
-                    suggest_panel.append(text);
-                }
-
+                suggest_panel.css({'border':'1px solid #ccc'});
+                // do the ShowMore
+                // if (myObj.length > 5) {
+                //     var text = '<a href="">Show More</a>';
+                //     suggest_panel.append(text);
+                // }
             }
         };
         xmlhttp.open("GET", "serverFood.php?" + place, true);
