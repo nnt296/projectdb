@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="./template_files/ie-emulation-modes-warning.js"></script>
+	<title>Admin</title>
+	<link rel="stylesheet" type="text/css" href="adminPage.css">
+	<link rel="stylesheet" href="fa/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="tab">
+  		<button class="tablinks" id="foodtab" onclick="openTab(event, 'Food')">Food</button>
+  		<button class="tablinks" id="vendortab" onclick="openTab(event, 'Vendor')">Vendor</button>
+  		<button class="tablinks" id="accounttab" onclick="openTab(event, 'Account')">Account</button>
+	</div>
+
+	<div id="Food" class="tabcontent">
+	  	<form>
+			<table>
+				<td>
+					<p>Food Name</p>
+	  				<input type="text" name="foodname" id="foodnamesearch">
+				</td>
+				<td>
+					<p>Food Course</p>
+	  				<select id="foodcoursesearch">
+	  					<option value="">Select All</option>
+	  					<option value="Món chính">Món chính</option>
+	  					<option value="Món ăn kèm">Món ăn kèm</option>
+	  					<option value="Đồ uống">Đồ uống</option>
+	  				</select>
+				</td>
+			</table>
+		</form>
+		<br>
+		<p>Add new food</p>
+		<form action="javascript:addFood();">
+			Name <input type="text" name="" required="" id="addfoodname" onkeyup="checkFood()">
+			Type <input type="text" name="" required="" id="addfoodtype">
+			Course
+			<select id="addfoodcourse">
+	  			<option value="Món chính">Món chính</option>
+	  			<option value="Món ăn kèm">Món ăn kèm</option>
+	  			<option value="Đồ uống">Đồ uống</option>
+	  		</select>
+	  		<br>
+	  		<table>
+	  			<tr>
+	  				<td>Desscription</td>
+	  				<td>Image</td>
+	  			</tr>
+	  			<tr>
+	  				<td><input type="text" name="" id="addfooddescription"></td>
+	  				<td><input type="text" name="" required="" id="addfoodimage"></td>
+	  			</tr>
+	  		</table>
+	  		<button type="submit" id="addfoodsubmit">Add</button>
+		</form>
+		<table id="foodresult"></table>  
+	</div>
+
+	<div id="Vendor" class="tabcontent">
+		<form>
+			<table>
+				<td>
+					<p>Vendor Name</p>
+	  				<input type="text" name="vendorname" id="vendornamesearch">
+				</td>
+				<td>
+					<p>Vendor Address</p>
+	  				<input type="text" name="vendoraddress" id="vendoraddresssearch">
+				</td>
+			</table>
+		</form>
+		<br>
+		<p>Add new vendor</p>	  
+		<form action="javascript:addVendor();">
+			Name <input type="text" name="" required="" id="addvendorname" onkeyup="checkVendor()">
+			Address <input type="text" name="" required="" id="addvendoraddress" onkeyup="checkVendor()">
+			<br>
+			Open Time <input type="time" name="" id="addvendoropen">
+			Close Time <input type="time" name="" id="addvendorclose">
+		  	Image <input type="text" name="" id="addvendorimage">
+		  	<button type="submit" id="addvendorsubmit">Add</button>
+		</form>
+		<table id="vendorresult"></table>		
+	</div>
+
+	<div id="Account" class="tabcontent">
+		<form>
+			<table>
+				<td>
+					<p>Email</p>
+	  				<input type="text" name="email" id="emailsearch">
+				</td>
+				<td>
+					<p>User Name</p>
+	  				<input type="text" name="username" id="usernamesearch">
+				</td>
+				<td>
+					<p>Phone</p>
+	  				<input type="text" name="phone" id="phonesearch">
+				</td>
+			</table>
+		</form>
+		<!-- Trigger/Open The Modal -->
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+		  <!-- Modal content -->
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    
+		    	<p>Edit account ID: <span id="idedit"></span></p>
+		    	<p>Password  <input type="text" name="" id="passwordedit"></p>
+		    	<p>Phone  <input type="text" name="" id="phoneedit" ></p>
+		    	<p>Address  <input type="text" name="" id="addressedit" ></p>
+		    	<p>First name  <input type="text" name="" id="fnameedit"></p>
+		    	<p>Last name  <input type="text" name="" id="lnameedit"></p>
+		   	 	<p>Birthday  <input type="date" name="" id="birthdayedit" required></p>
+		    	<button onclick="saveAccount()">Save</button>
+		    
+		    
+		  </div>
+
+		</div>
+		<table id="accountresult"></table> 	  
+	</div>
+	<br>
+	<div>
+		<table id="dishresult"></table>
+	</div>
+<script type="text/javascript" src="adminPage.js"></script>
+<script src="./template_files/jquery-3.2.1.min.js"></script>
+</body>
+</html>
