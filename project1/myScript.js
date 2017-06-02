@@ -120,7 +120,7 @@ function foodAssoWithPlace(VendorID) {
 function displayPlace(Image, Vendor_Name, Address, VendorID) {
     $('#display').text('');
     //to empty display
-    var img = "../Picture2/" + Image;
+    var img = "../Picture/" + Image;
     var text = '<div >' +
         '<img src="' + img + '" style="width: 100%; height: 500px;"></div> ' +
         '<br> ' +
