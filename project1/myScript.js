@@ -77,7 +77,7 @@ function showPlace(str) {
                 var myObj = JSON.parse(this.responseText);
                 var suggest_panel = $('#suggest_panel');
                 suggest_panel.text('');
-                for (i = 0; i < 5; i++) {
+                for (i = 0; i < myObj.length; i++) {
                     var text = '<p><a href="#delivery" onmouseup="displayPlace(\'' +
                         myObj[i]['Image'] + '\',\'' +
                         myObj[i]['Vendor_Name'] + '\', \'' +
