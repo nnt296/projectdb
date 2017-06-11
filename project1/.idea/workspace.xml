@@ -4,7 +4,6 @@
     <list default="true" id="d9ccf867-1b30-45a0-a34b-d2b0d94c853c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user.js" afterPath="$PROJECT_DIR$/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user.php" afterPath="$PROJECT_DIR$/user.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,7 +15,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="user.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
@@ -36,20 +35,20 @@
       <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1764">
+            <state relative-caret-position="-1134">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="147" column="36" lean-forward="false" selection-start-line="147" selection-start-column="36" selection-end-line="147" selection-end-column="36" />
+            <state relative-caret-position="504">
+              <caret line="114" column="18" lean-forward="true" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
               <folding>
-                <marker date="1497169875308" expanded="true" signature="988:1004" ph="..." />
+                <marker date="1497170182622" expanded="true" signature="988:1004" ph="..." />
               </folding>
             </state>
           </provider>
@@ -122,8 +121,8 @@
         <option value="$PROJECT_DIR$/mystyle.css" />
         <option value="$PROJECT_DIR$/user.html" />
         <option value="$PROJECT_DIR$/myScript.js" />
-        <option value="$PROJECT_DIR$/user.js" />
         <option value="$PROJECT_DIR$/user.php" />
+        <option value="$PROJECT_DIR$/user.js" />
       </list>
     </option>
   </component>
@@ -159,7 +158,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -188,6 +186,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -333,7 +332,8 @@
       <workItem from="1496039583816" duration="1120000" />
       <workItem from="1496114483663" duration="615000" />
       <workItem from="1496419510886" duration="6444000" />
-      <workItem from="1497169658485" duration="318000" />
+      <workItem from="1497169658485" duration="374000" />
+      <workItem from="1497170132073" duration="145000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed logout page user">
       <created>1495980935842</created>
@@ -440,17 +440,24 @@
       <option name="project" value="LOCAL" />
       <updated>1496427668824</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="test picture">
+      <created>1497170017280</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1497170017280</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="178994000" />
+    <option name="totallyTimeSpent" value="179195000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28356606" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2878625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930845" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -756,11 +763,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
-          <folding>
-            <marker date="1496040368459" expanded="true" signature="740:795" ph="SELECT UserI... account" />
-            <marker date="1496040368459" expanded="true" signature="1019:1063" ph="SELECT Email... account" />
-            <marker date="1496040368459" expanded="true" signature="1267:1373" ph="INSERT INTO account... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -790,7 +792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
           <caret line="68" column="42" lean-forward="false" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -798,7 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -806,7 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2289">
           <caret line="109" column="105" lean-forward="false" selection-start-line="109" selection-start-column="105" selection-end-line="109" selection-end-column="105" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -821,28 +820,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="415">
           <caret line="86" column="42" lean-forward="false" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="42" />
-          <folding>
-            <marker date="1496426917104" expanded="true" signature="4354:4381" ph="..." />
-            <marker date="1496426917104" expanded="true" signature="5912:5926" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="147" column="36" lean-forward="false" selection-start-line="147" selection-start-column="36" selection-end-line="147" selection-end-column="36" />
-          <folding>
-            <marker date="1497169875308" expanded="true" signature="988:1004" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1764">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -857,6 +834,24 @@
             <marker date="1497169976019" expanded="true" signature="2443:2450" ph="SELECT Email... account" />
             <marker date="1497169976019" expanded="true" signature="2443:2486" ph="SELECT UserI... account" />
             <marker date="1497169976019" expanded="true" signature="2664:2905" ph="SELECT f.Foo... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1134">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="114" column="18" lean-forward="true" selection-start-line="114" selection-start-column="18" selection-end-line="114" selection-end-column="18" />
+          <folding>
+            <marker date="1497170182622" expanded="true" signature="988:1004" ph="..." />
           </folding>
         </state>
       </provider>
