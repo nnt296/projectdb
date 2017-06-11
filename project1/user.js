@@ -101,6 +101,12 @@ function getEdit() {
                 '</div> ' +
                 '</div> ' +
                 '<div class="form-group"> ' +
+                '<label class="col-lg-3 control-label">Phone:</label> ' +
+                '<div class="col-lg-8"> ' +
+                '<input class="form-control" type="text" name="phone" value="' + myObj[0]['Phone'] + '"> ' +
+                '</div> ' +
+                '</div> ' +
+                '<div class="form-group"> ' +
                 '<label class="col-lg-3 control-label">DOB:</label> ' +
                 '<div class="col-lg-8"> ' +
                 '<input class="form-control" type="text" name="dob" value="' + myObj[0]['Birthday'] + '"> ' +
@@ -139,6 +145,7 @@ function setEdit(){
     var address = $('input[name="address"]').val();
     var dob = $('input[name="dob"]').val();
     var password = $('input[name="password"]').val();
+    var phone = $('input[name="phone"]').val();
 
     var dict = [];
     var element = {};
@@ -147,6 +154,7 @@ function setEdit(){
     element['address'] = address;
     element['dob'] = dob;
     element['password'] = password;
+    element['phone'] = phone;
     dict.push(element);
     $.post("user.php", {submit: JSON.stringify(dict)}, function (result) {
         $('#result').text(result);

@@ -12,11 +12,13 @@ if (isset($_POST['submit']) && isset($_SESSION['login_user'])) {
     $lname = $data[0]['lname'];
     $address = $data[0]['address'];
     $dob = $data[0]['dob'];
+    $phone = $data[0]['phone'];
+
     $password = $data[0]['password'];
 
     $query = sprintf('UPDATE account
-                            SET First_Name="%s", Last_Name="%s", Address="%s", Birthday="%s", Password="%s"
-                            WHERE Email="%s"',$fname, $lname, $address, $dob, $password, $email);
+                            SET First_Name="%s", Last_Name="%s", Address="%s", Birthday="%s", Password="%s", Phone="%s"
+                            WHERE Email="%s"', $fname, $lname, $address, $dob, $password, $phone, $email);
 
     $result = mysqli_query($conn, $query);
     if (!$result) {
@@ -66,9 +68,9 @@ if (isset($_GET['acc'])) {
         echo $json;
     }
     if ($_GET['acc'] == 'history') {
-        $query = sprintf("SELECT UserID FROM account WHERE Email='%s'",$email);
+        $query = sprintf("SELECT UserID FROM account WHERE Email='%s'", $email);
         $result = mysqli_query($conn, $query);
-        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+        $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
         $userID = $row['UserID'];
 
         $query = sprintf("SELECT f.Food_Name, t.Quantity, date(t.Date) as Date
