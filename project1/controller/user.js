@@ -33,7 +33,7 @@ function getProfile() {
                 '</div>';
         }
     };
-    xmlhttp.open("GET", "../controller/user.php?acc=profile", true);
+    xmlhttp.open("GET", "../model/user.php?acc=profile", true);
     xmlhttp.send();
 }
 function checkUser() {
@@ -46,7 +46,7 @@ function checkUser() {
             }
         }
     };
-    xmlhttp.open("GET", "../controller/checkLogin.php", true);
+    xmlhttp.open("GET", "../model/checkLogin.php", true);
     xmlhttp.send();
 }
 function startIfUser(str) {
@@ -136,7 +136,7 @@ function getEdit() {
             element.html(text);
         }
     };
-    xmlhttp.open("GET", "../controller/user.php?acc=edit", true);
+    xmlhttp.open("GET", "../model/user.php?acc=edit", true);
     xmlhttp.send();
 }
 function setEdit(){
@@ -156,7 +156,7 @@ function setEdit(){
     element['password'] = password;
     element['phone'] = phone;
     dict.push(element);
-    $.post("../controller/user.php", {submit: JSON.stringify(dict)}, function (result) {
+    $.post("../model/user.php", {submit: JSON.stringify(dict)}, function (result) {
         $('#result').text(result);
     });
 }
@@ -188,7 +188,7 @@ function getPurHis() {
             }
         }
     };
-    xmlhttp.open("GET", "../controller/user.php?acc=history", true);
+    xmlhttp.open("GET", "../model/user.php?acc=history", true);
     xmlhttp.send();
 }
 function getOrderFood() {

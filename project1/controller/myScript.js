@@ -60,7 +60,7 @@ function checkUser() {
             }
         }
     };
-    xmlhttp.open("GET", "../controller/checkLogin.php", true);
+    xmlhttp.open("GET", "../model/checkLogin.php", true);
     xmlhttp.send();
 }
 
@@ -94,7 +94,7 @@ function showPlace(str) {
                 // }
             }
         };
-        xmlhttp.open("GET", "../controller/serverFood.php?" + place, true);
+        xmlhttp.open("GET", "../model/serverFood.php?" + place, true);
         xmlhttp.send();
     }
 }
@@ -112,7 +112,7 @@ function foodAssoWithPlace(VendorID) {
                 fetchFood(this.responseText, "delivery", true);
             }
         };
-        xmlhttp.open("GET", "../controller/serverFood.php?" + fplace, true);
+        xmlhttp.open("GET", "../model/serverFood.php?" + fplace, true);
         xmlhttp.send();
     }
 }
@@ -148,7 +148,7 @@ function showFood(str) {
                 fetchFood(this.responseText, "display", false);
             }
         };
-        xmlhttp.open("GET", "../controller/serverFood.php?" + food, true);
+        xmlhttp.open("GET", "../model/serverFood.php?" + food, true);
         xmlhttp.send();
     }
 }
@@ -252,7 +252,7 @@ function getFood(dishid, price) {
             }
         }
     };
-    xmlhttp.open("GET", "../controller/addCart.php?state=add&code=" + dishid, true);
+    xmlhttp.open("GET", "../model/addCart.php?state=add&code=" + dishid, true);
     xmlhttp.send();
 }
 
@@ -269,7 +269,7 @@ $('#confirm').on('click', function payment() {
         element[id] = quantity;
         dict.push(element);
     });
-    $.post("../controller/addCart.php", {submit: JSON.stringify(dict)}, function (result) {
+    $.post("../model/addCart.php", {submit: JSON.stringify(dict)}, function (result) {
         $('#temp').text(result);
     });
     $('#btnTrigger').click();

@@ -22,7 +22,7 @@ function checkUser() {
             }
         }
     };
-    xmlhttp.open("GET", "../controller/checkLogin.php", true);
+    xmlhttp.open("GET", "../model/checkLogin.php", true);
     xmlhttp.send();
 }
 $(checkUser());

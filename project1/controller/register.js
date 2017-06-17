@@ -1,7 +1,7 @@
 function login() {
     var email = $('#form-username').val();
     var password = $('#form-password').val()
-    $.post("../controller/login.php", {email: email, password: password, signin: "signin"}, function (result) {
+    $.post("../model/login.php", {email: email, password: password, signin: "signin"}, function (result) {
         if (result === "Error") {
             var warning = '<div class="alert alert-warning text-center">' +
                 '<strong>Warning!</strong> Incorrect email or password! Redirect in 2s!</div>';
@@ -32,7 +32,7 @@ function signup() {
     var fname = $('#form-first-name').val();
     var lname = $('#form-last-name').val();
 
-    $.post("../controller/signup.php", {
+    $.post("../model/signup.php", {
         fname: fname,
         lname: lname,
         email: email,

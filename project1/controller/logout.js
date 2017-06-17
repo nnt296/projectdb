@@ -12,6 +12,6 @@ $(function () {
             }, 3000);
         }
     };
-    xmlhttp.open("GET", "../controller/logout.php?", false);
+    xmlhttp.open("GET", "../model/logout.php?", false);
     xmlhttp.send();
 })
